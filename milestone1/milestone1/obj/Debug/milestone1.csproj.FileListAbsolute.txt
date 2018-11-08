@@ -1,0 +1,7 @@
+C:\Users\ZetaHaro\source\repos\milestone1\milestone1\obj\Debug\milestone1.csprojAssemblyReference.cache
+C:\Users\ZetaHaro\source\repos\milestone1\milestone1\obj\Debug\milestone1.csproj.CoreCompileInputs.cache
+C:\Users\ZetaHaro\source\repos\milestone1\milestone1\bin\Debug\milestone1.exe.config
+C:\Users\ZetaHaro\source\repos\milestone1\milestone1\bin\Debug\milestone1.exe
+C:\Users\ZetaHaro\source\repos\milestone1\milestone1\bin\Debug\milestone1.pdb
+C:\Users\ZetaHaro\source\repos\milestone1\milestone1\obj\Debug\milestone1.exe
+C:\Users\ZetaHaro\source\repos\milestone1\milestone1\obj\Debug\milestone1.pdb

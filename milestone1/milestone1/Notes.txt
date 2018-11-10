@@ -1,0 +1,13 @@
+As of Nov 11, 2018:
+
+1. File Reading - Done
+2. Lexical Analyzer:
+   * Literals:
+   		* Detecting Integer Literal - Done
+   		* Detecting String Literal (printing them w/o quotes): - Done
+   		* Detecting Macros - Not Done
+   * Identifiers:
+   		* Detecting Variable Name Identifier - Not Done
+   		* Detecting Function Name Identifier - Not Done
+   * Keywords:
+   		* Detecting Keywords - Done

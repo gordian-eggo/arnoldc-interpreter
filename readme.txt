@@ -10,3 +10,6 @@ ArnoldC.jar - the ArnoldC language pack for reference. Usage: ArnoldC [-run|-dec
 		  		 and added regex for variables.	
 
 		  2252H: add variable regex and changed variable names for readability. 
+
+11-15-18, 0229H: took the working parts for variable and function names from Waldo's code. Not a merge, more of an update.
+  approx. 0317H: added better matches for macros and and integers. Integers can now be read next to the keywords YOU SET US 			   UP, GET UP, and GET DOWN.

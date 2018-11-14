@@ -8,3 +8,5 @@ ArnoldC.jar - the ArnoldC language pack for reference. Usage: ArnoldC [-run|-dec
 
 		  2031H: fixed contents of Program.cs, nadoble yung laman. Inayos din ibang variable names for readability
 		  		 and added regex for variables.	
+
+		  2252H: add variable regex and changed variable names for readability. 

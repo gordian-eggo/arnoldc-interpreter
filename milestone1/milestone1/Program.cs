@@ -15,74 +15,55 @@ namespace arnoldc
 
             StreamReader sr = new StreamReader("../../lexemes.arnoldc");
             string data = sr.ReadLine();
-            // Define a regular expression for repeated words.
 
-
-            //Regex rx1 = new Regex(<insert other regex here>);
-
-            Regex keywords = new Regex(@"ITS SHOWTIME|IT'S SHOWTIME|TALK TO THE HAND|
-                                YOU HAVE BEEN TERMINATED|I LIED|NO PROBLEMO|
-                                BECAUSE I'M GOING TO SAY PLEASE|BULLSHIT|
-                                YOU HAVE NO RESPECT FOR LOGIC|STICK AROUND|CHILL|
-                                GET UP|GET DOWN|YOU'RE FIRED|HE HAD TO SPLIT|
-                                I LET HIM GO|YOU ARE NOT YOU YOU ARE ME|
-                                LET OFF SOME STEAM BENNET|CONSIDER THAT A DIVORCE|
-                                KNOCK KNOCK|LISTEN TO ME VERY CAREFULLY|GIVE THESE PEOPLE AIR|
-                                I NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE|
-                                I'LL BE BACK|HASTA LA VISTA, BABY|DO IT NOW|GET YOUR ASS TO MARS|
-                                HEY CHRISTMAS TREE|YOU SET US UP|
-                                I WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY|
-                                GET TO THE CHOPPER|HERE IS MY INVITATION|ENOUGH TALK|WHAT THE FUCK DID I DO WRONG");
-
+            Regex keywords = new Regex(@"\bIT'S SHOWTIME\b|\bTALK TO THE HAND\b|\bYOU HAVE BEEN TERMINATED\b
+                                |\bI LIED\b|\bNO PROBLEMO\b|\bBECAUSE I'M GOING TO SAY PLEASE\b|\bBULLSHIT\b
+                                |\bYOU HAVE NO RESPECT FOR LOGIC\b|\bSTICK AROUND\b|\bCHILL\b|\bGET UP\b|\bGET DOWN\b
+                                |\bYOU'RE FIRED\b|\bHE HAD TO SPLIT\b|\bI LET HIM GO\b|\bYOU ARE NOT YOU YOU ARE ME\b
+                                |\bLET OFF SOME STEAM BENNET\b|\bCONSIDER THAT A DIVORCE\b|\bKNOCK KNOCK\b
+                                |\bLISTEN TO ME VERY CAREFULLY\b|\bGIVE THESE PEOPLE AIR\b
+                                |\bI NEED YOUR CLOTHES YOUR BOOTS AND YOUR MOTORCYCLE\b
+                                |\bI'LL BE BACK\b|\bHASTA LA VISTA, BABY\b|DO IT NOW\b|\bGET YOUR ASS TO MARS\b
+                                |\bHEY CHRISTMAS TREE\b|YOU SET US UP\b|\bI WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY\b
+                                |\bGET TO THE CHOPPER\b|HERE IS MY INVITATION\b|\bENOUGH TALK\b|\bWHAT THE FUCK DID I DO WRONG\b");
+            
             Regex integer_regex = new Regex(@"\b\d+\b");
-            Regex variable_regex = new Regex(@"[a-zA-Z][a-zA-Z0-9_]*");
+            Regex variable_regex = new Regex(@"[a-zA-Z][a-zA-Z_]*");
 
-            while (data != null) {
-                Match keyword_matches = keywords.Match(data);
+            while (data != null)
+            {
+                Match keywords_matches = keywords.Match(data);
                 Match integer_matches = integer_regex.Match(data);
                 Match variable_matches = variable_regex.Match(data);
 
-                try {
+                MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
 
-                    while (data != null) {
-                        // Console.WriteLine(data + "\n");
-                        // data = sr.ReadLine();
-             
-                        MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
-
-                        if (keyword_matches.Success)
-                        {
-                            Console.WriteLine("Keyword: {0}", keyword_matches.Value);
-    
-                        }
-
-                        if (integer_matches.Success)
-                        {
-                            Console.WriteLine("Integer: {0}", integer_matches.Value);
-    
-                        }
-
-                        if (variable_matches.Success) {
-                            Console.WriteLine("Variable: {0}", variable_matches.Value);
-                        }
-    
-    
-                        foreach (Match match in collect1)
-                        {
-                            Console.WriteLine("String literal: {0}", match.Groups[1].Value);
-                        }
-    
-    
-                        data = sr.ReadLine();
-    
-                    }
-
-                } catch (Exception e) {
-
-                    //Console.WriteLine("Error: " + e.Message);
+                if (keywords_matches.Success) {
+                    Console.WriteLine("Keyword: {0}", keywords_matches.Value);
 
                 }
+                
+                if (integer_matches.Success) {
+                    Console.WriteLine("Integer: {0}", integer_matches.Value);
+
+                }
+
+                if (variable_matches.Success) {
+                    Console.WriteLine("Variable: {0}", variable_matches.Value);
+
+                }
+
+
+                foreach (Match match in collect1) {
+                    Console.WriteLine("String literal: {0}", match.Groups[1].Value);
+                }
+
+
+                data = sr.ReadLine();
             }
+
+
+
         }
     }
 }

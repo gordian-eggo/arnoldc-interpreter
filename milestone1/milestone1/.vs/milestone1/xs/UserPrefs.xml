@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿<Properties StartupConfiguration="{6C150257-AA21-4732-90CF-87ECCD4F2B47}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
@@ -12,3 +13,6 @@
   <MonoDevelop.Ide.ItemProperties.milestone1 PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>
+=======
+﻿<Properties />
+>>>>>>> Stashed changes

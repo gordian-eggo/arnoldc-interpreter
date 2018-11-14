@@ -11,3 +11,9 @@ C:/Users/ZetaHaro/source/repos/milestone1/milestone1/obj/Debug/milestone1.pdb
 /home/zetaharo/Desktop/arnoldc/arnoldc-interpreter/milestone1/milestone1/obj/Debug/milestone1.csproj.CoreCompileInputs.cache
 /home/zetaharo/Desktop/arnoldc/arnoldc-interpreter/milestone1/milestone1/obj/Debug/milestone1.exe
 /home/zetaharo/Desktop/arnoldc/arnoldc-interpreter/milestone1/milestone1/obj/Debug/milestone1.pdb
+/media/seraph/DATA/32ce9bca2117dd3835e2b1/CMSC/CMSC 124/arnoldc-interpreter/milestone1/milestone1/obj/Debug/milestone1.csproj.CoreCompileInputs.cache
+/media/seraph/DATA/32ce9bca2117dd3835e2b1/CMSC/CMSC 124/arnoldc-interpreter/milestone1/milestone1/obj/Debug/milestone1.exe
+/media/seraph/DATA/32ce9bca2117dd3835e2b1/CMSC/CMSC 124/arnoldc-interpreter/milestone1/milestone1/obj/Debug/milestone1.pdb
+/media/seraph/DATA/32ce9bca2117dd3835e2b1/CMSC/CMSC 124/arnoldc-interpreter/milestone1/milestone1/bin/Debug/milestone1.exe.config
+/media/seraph/DATA/32ce9bca2117dd3835e2b1/CMSC/CMSC 124/arnoldc-interpreter/milestone1/milestone1/bin/Debug/milestone1.exe
+/media/seraph/DATA/32ce9bca2117dd3835e2b1/CMSC/CMSC 124/arnoldc-interpreter/milestone1/milestone1/bin/Debug/milestone1.pdb

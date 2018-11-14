@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace arnoldc
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace arnoldc {
+
+    class Program {
+        
+        static void Main(string[] args) {
 
             StreamReader sr = new StreamReader("../../lexemes.arnoldc");
             string data = sr.ReadLine();
@@ -30,8 +29,8 @@ namespace arnoldc
             Regex integer_regex = new Regex(@"\b\d+\b");
             Regex variable_regex = new Regex(@"[a-zA-Z][a-zA-Z_]*");
 
-            while (data != null)
-            {
+            while (data != null) {
+
                 Match keywords_matches = keywords.Match(data);
                 Match integer_matches = integer_regex.Match(data);
                 Match variable_matches = variable_regex.Match(data);
@@ -60,6 +59,7 @@ namespace arnoldc
 
 
                 data = sr.ReadLine();
+
             }
 
 

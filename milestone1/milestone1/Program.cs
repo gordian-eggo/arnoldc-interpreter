@@ -35,7 +35,7 @@ namespace arnoldc
                                 GET TO THE CHOPPER|HERE IS MY INVITATION|ENOUGH TALK|WHAT THE FUCK DID I DO WRONG");
 
             Regex integer_regex = new Regex(@"\b\d+\b");
-            Regex variable_regex = new Regex(@"^[a-zA-Z][a-zA-Z0-9_]*$");
+            Regex variable_regex = new Regex(@"[a-zA-Z][a-zA-Z0-9_]*");
 
             while (data != null) {
                 Match keyword_matches = keywords.Match(data);
@@ -45,22 +45,30 @@ namespace arnoldc
                 try {
 
                     while (data != null) {
-                        //Console.WriteLine(data);
-                        data = sr.ReadLine();
+                        // Console.WriteLine(data + "\n");
+                        // data = sr.ReadLine();
              
                         MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
 
-                        if (keyword_matches.Success) {
+                        if (keyword_matches.Success)
+                        {
                             Console.WriteLine("Keyword: {0}", keyword_matches.Value);
     
                         }
-                        if (integer_matches.Success) {
+
+                        if (integer_matches.Success)
+                        {
                             Console.WriteLine("Integer: {0}", integer_matches.Value);
     
                         }
+
+                        if (variable_matches.Success) {
+                            Console.WriteLine("Variable: {0}", variable_matches.Value);
+                        }
     
     
-                        foreach (Match match in collect1) {
+                        foreach (Match match in collect1)
+                        {
                             Console.WriteLine("String literal: {0}", match.Groups[1].Value);
                         }
     

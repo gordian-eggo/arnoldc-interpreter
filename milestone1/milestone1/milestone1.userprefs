@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{6C150257-AA21-4732-90CF-87ECCD4F2B47}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Notes.txt">
     <Files>
-      <File FileName="Program.cs" Line="36" Column="18" />
-      <File FileName="lexemes.arnoldc" Line="9" Column="23" />
+      <File FileName="Program.cs" Line="30" Column="18" />
+      <File FileName="lexemes.arnoldc" Line="1" Column="10" />
+      <File FileName="Notes.txt" Line="8" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

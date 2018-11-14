@@ -37,7 +37,7 @@ namespace arnoldc
 
                 MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
                 MatchCollection collect2 = Regex.Matches(data, @"HEY CHRISTMAS TREE (?<var1>[a-z0-9]*)");
-
+                MatchCollection collect3 = Regex.Matches(data, @"DO IT NOW (?<f1>[a-z0-9]*)");
                 if (match1.Success)
                 {
                     Console.WriteLine("Keyword: {0}", match1.Value);
@@ -60,6 +60,11 @@ namespace arnoldc
                 foreach (Match match in collect2)
                 {
                     Console.WriteLine("Variable name: {0}", match.Groups["var1"].Value);
+                }
+
+                foreach (Match match in collect3)
+                {
+                    Console.WriteLine("Function name: {0}", match.Groups["f1"].Value);
                 }
 
 

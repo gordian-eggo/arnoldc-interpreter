@@ -27,13 +27,16 @@ namespace arnoldc
                                 |\bHEY CHRISTMAS TREE\b|YOU SET US UP\b|\bI WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY\b
                                 |\bGET TO THE CHOPPER\b|HERE IS MY INVITATION\b|\bENOUGH TALK\b|\bWHAT THE FUCK DID I DO WRONG\b");
             Regex rx2 = new Regex(@"\b\d+\b");
-
+            Regex rx3 = new Regex(@"[a-zA-Z]([a-zA-Z0-9_])*");
+    
             while (data != null)
             {
                 Match match1 = rx.Match(data);
                 Match match2 = rx2.Match(data);
+                Match match3 = rx3.Match(data);
 
                 MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
+                MatchCollection collect2 = Regex.Matches(data, @"HEY CHRISTMAS TREE ([a-zA-Z])*");
 
                 if (match1.Success)
                 {
@@ -47,10 +50,19 @@ namespace arnoldc
                 }
 
 
+
+
                 foreach (Match match in collect1)
                 {
                     Console.WriteLine("String literal: {0}", match.Groups[1].Value);
                 }
+
+                foreach (Match match in collect2)
+                {
+                    Console.WriteLine("Variable name: {0}", match.Groups[0].Value);
+                }
+
+
 
 
                 data = sr.ReadLine();

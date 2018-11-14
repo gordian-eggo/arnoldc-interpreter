@@ -33,10 +33,10 @@ namespace arnoldc
             {
                 Match match1 = rx.Match(data);
                 Match match2 = rx2.Match(data);
-                Match match3 = rx3.Match(data);
+                Match match3 = rx3.Match(data);     
 
                 MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
-                MatchCollection collect2 = Regex.Matches(data, @"HEY CHRISTMAS TREE ([a-zA-Z])*");
+                MatchCollection collect2 = Regex.Matches(data, @"HEY CHRISTMAS TREE (?<var1>[a-z0-9]*)");
 
                 if (match1.Success)
                 {
@@ -59,7 +59,7 @@ namespace arnoldc
 
                 foreach (Match match in collect2)
                 {
-                    Console.WriteLine("Variable name: {0}", match.Groups[0].Value);
+                    Console.WriteLine("Variable name: {0}", match.Groups["var1"].Value);
                 }
 
 

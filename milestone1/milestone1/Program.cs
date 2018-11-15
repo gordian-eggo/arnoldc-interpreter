@@ -13,6 +13,8 @@ namespace arnoldc {
         static void Main(string[] args) {
 
             StreamReader sr = new StreamReader("../../lexemes.arnoldc");
+            StreamWriter writer = new StreamWriter("../../lexemes.txt");
+
             string data = sr.ReadLine();
 
             Regex keywords = new Regex(@"\bIT'S SHOWTIME\b|\bTALK TO THE HAND\b|\bYOU HAVE BEEN TERMINATED\b
@@ -26,60 +28,61 @@ namespace arnoldc {
                                 |\bHEY CHRISTMAS TREE\b|YOU SET US UP\b|\bI WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY\b
                                 |\bGET TO THE CHOPPER\b|HERE IS MY INVITATION\b|\bENOUGH TALK\b|\bWHAT THE FUCK DID I DO WRONG\b");
 
-            // Regex macro_regex = new Regex(@"\b\@I LIED\b|\b\@NO PROBLEMO\b");            
-            // Regex integer_regex = new Regex(@"\b\d+\b");
             Regex variable_regex = new Regex(@"[a-zA-Z]([a-zA-Z_])*");
+            // Regex integer_regex = new Regex(@"\b\d+\b");
 
-            while (data != null) {
+            try {
 
-                Match keywords_matches = keywords.Match(data);
-                Match integer_matches = integer_regex.Match(data);
-                // Match macro_matches = macro_regex.Match(data);
+                while (data != null) {  
 
-                MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
-                MatchCollection collect2 = Regex.Matches(data, @"HEY CHRISTMAS TREE (?<var1>[a-z0-9]*[a-z0-9]*)");
-                MatchCollection collect3 = Regex.Matches(data, @"DO IT NOW (?<f1>[a-z0-9]*)");
-                MatchCollection macro_collection = Regex.Matches(data, @"YOU SET US UP (?<macro>\@I LIED|\@NO PROBLEMO)");
-                MatchCollection integer_collection = Regex.Matches(data, @"YOU SET US UP (?<int>\b\d+\b)|GET UP (?<int>\b\d+\b)|
-                                                                        GET DOWN (?<int>\b\d+\b)");
+                    Console.WriteLine(data + "\n");
 
-                if (keywords_matches.Success) {
-                    Console.WriteLine("Keyword: {0}", keywords_matches.Value);
+                    Match keywords_matches = keywords.Match(data);
+    
+                    MatchCollection string_collection = Regex.Matches(data, @"""(.*?)""");
+                    MatchCollection variable_collection = Regex.Matches(data, @"HEY CHRISTMAS TREE (?<var1>[a-z0-9]*[a-z0-9]*)");
+                    MatchCollection fxn_name_collection = Regex.Matches(data, @"DO IT NOW (?<f1>[a-z0-9]*)");
+                    MatchCollection macro_collection = Regex.Matches(data, @"YOU SET US UP (?<macro>\@I LIED|\@NO PROBLEMO)");
+                    MatchCollection integer_collection = Regex.Matches(data, @"YOU SET US UP (?<int>\b\d+\b)|GET UP (?<int>\b\d+\b)|GET DOWN (?<int>\b\d+\b)");
+    
+                    if (keywords_matches.Success) {
+                        Console.WriteLine("Keyword: {0}", keywords_matches.Value);
+
+                    }
+    
+                    foreach (Match match in string_collection) {
+                        Console.WriteLine("String literal: {0}", match.Groups[1].Value);
+                    }
+    
+                    foreach (Match match in variable_collection) {
+                        Console.WriteLine("Variable name: {0}", match.Groups["var1"].Value);
+                    }
+    
+                    foreach (Match match in fxn_name_collection) {
+                        Console.WriteLine("Function name: {0}", match.Groups["f1"].Value);
+                    }
+    
+                    foreach (Match match in macro_collection) {
+                        Console.WriteLine("Macro: {0}", match.Groups["macro"].Value);
+                    }
+    
+                    foreach (Match match in integer_collection) {
+                        Console.WriteLine("Integer: {0}", match.Groups["int"].Value);
+                    }
+    
+                    Console.WriteLine("this somehow prints twice before termination");
+                    data = sr.ReadLine();
+
+                    // this was supposed to fix the exception on line 72
+                    // if (data == null) {
+                    //     break;
+                    // }
 
                 }
-                
-                if (integer_matches.Success) {
-                    Console.WriteLine("Integer: {0}", integer_matches.Value);
 
-                }
-
-                foreach (Match match in collect1) {
-                    Console.WriteLine("String literal: {0}", match.Groups[1].Value);
-                }
-
-                foreach (Match match in collect2) {
-                    Console.WriteLine("Variable name: {0}", match.Groups["var1"].Value);
-                }
-
-                foreach (Match match in collect3) {
-                    Console.WriteLine("Function name: {0}", match.Groups["f1"].Value);
-                }
-
-                foreach (Match match in macro_collection) {
-                    Console.WriteLine("Macro: {0}", match.Groups["macro"].Value);
-                }
-
-                foreach (Match match in integer_collection) {
-                    Console.WriteLine("Integer: {0}", match.Groups["int"].Value);
-                }
-
-
-                data = sr.ReadLine();
-
+            } catch (Exception e) {
+                Console.WriteLine("Error: " + e.Message);
             }
-
-
-
         }
     }
 }

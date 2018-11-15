@@ -13,3 +13,8 @@ ArnoldC.jar - the ArnoldC language pack for reference. Usage: ArnoldC [-run|-dec
 
 11-15-18, 0229H: took the working parts for variable and function names from Waldo's code. Not a merge, more of an update.
   approx. 0317H: added better matches for macros and and integers. Integers can now be read next to the keywords YOU SET US 			   UP, GET UP, and GET DOWN.
+  		  0748H: encountered exception at lines 43 and 72, not sure how to fix it so ask Ma'am. Short description below. 
+  		  		 Line 43: System.ArgumentException has been thrown parsing the contents of line 41.
+  		  		 Line 72: System.ArgumentNullException has been thrown, value cannot be null.
+  		  0801H: possible cause for bug found. The while loop that iterates through the document while data = sr.ReadLine() 
+  		  		 is not null stops at YOU HAVE BEEN TERMINATED without having analyzed the line.

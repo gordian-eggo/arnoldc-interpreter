@@ -20,7 +20,8 @@ ArnoldC.jar - the ArnoldC language pack for reference. Usage: ArnoldC [-run|-dec
   		  		 is not null stops at YOU HAVE BEEN TERMINATED without having analyzed the line.
 
 11-18-18, 1301H: running sample.arnoldc for reference while making the state diagram. Comments in section below.
-		  1437H: finished making sample programs for reference re: ArnoldC syntax
+		  1437H: finished making sample programs for reference re: ArnoldC syntax. 
+		         To run, use the command: clear && java -jar ArnoldC.jar <filename>.arnoldc && java <filename>
 
 
 COMMENTS ON SYNTAX:

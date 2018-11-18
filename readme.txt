@@ -41,3 +41,6 @@ COMMENTS ON SYNTAX:
 	> the value of the condition statement has to be calculated beforehand
 	> initialize all variables that you're going to use
 	> you have to compare the value for the while loop to a different value in a different variable
+	> you can't put a GET TO THE CHOPPER loop and/or a HEY CHRISTMAS TREE variable declaration inside a previous GET TO THE CHOPPER loop
+	> you can't put a print statement between HEY CHRISTMAS TREE and YOU SET US UP
+	> you can't put if statements/if-else statements inside a GET TO THE CHOPPER loop

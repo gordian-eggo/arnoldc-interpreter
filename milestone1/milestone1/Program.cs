@@ -13,10 +13,13 @@ namespace arnoldc
         static void Main(string[] args)
         {
 
+
             StreamReader sr = new StreamReader("../../lexemes.arnoldc");
             string data = sr.ReadLine();
+            var dict1 = new Dictionary<int, Tuple<string, string>>();
+            int i = 1;
 
-            Regex keywords = new Regex(@"\bYOU HAVE BEEN TERMINATED\b|\bIT'S SHOWTIME\b|\bTALK TO THE HAND\b
+            Regex rx = new Regex(@"\bIT'S SHOWTIME\b|\bTALK TO THE HAND\b|\bYOU HAVE BEEN TERMINATED\b
                                 |\bI LIED\b|\bNO PROBLEMO\b|\bBECAUSE I'M GOING TO SAY PLEASE\b|\bBULLSHIT\b
                                 |\bYOU HAVE NO RESPECT FOR LOGIC\b|\bSTICK AROUND\b|\bCHILL\b|\bGET UP\b|\bGET DOWN\b
                                 |\bYOU'RE FIRED\b|\bHE HAD TO SPLIT\b|\bI LET HIM GO\b|\bYOU ARE NOT YOU YOU ARE ME\b
@@ -26,80 +29,59 @@ namespace arnoldc
                                 |\bI'LL BE BACK\b|\bHASTA LA VISTA, BABY\b|DO IT NOW\b|\bGET YOUR ASS TO MARS\b
                                 |\bHEY CHRISTMAS TREE\b|YOU SET US UP\b|\bI WANT TO ASK YOU A BUNCH OF QUESTIONS AND I WANT TO HAVE THEM ANSWERED IMMEDIATELY\b
                                 |\bGET TO THE CHOPPER\b|HERE IS MY INVITATION\b|\bENOUGH TALK\b|\bWHAT THE FUCK DID I DO WRONG\b");
+            Regex rx2 = new Regex(@"\b\d+\b");
+            Regex rx3 = new Regex(@"[a-z0-9]*[a-z0-9]+");
 
-            Regex keyworderror = new Regex(@"\bYOU\s\s*HAVE\s\s*BEEN\s\s*TERMINATED\b");
-
-            Regex unk_symbols = new Regex(@"[\$%\^\&]+");
-            using (StreamWriter writetext = new StreamWriter("../../output.txt"))
+            while (data != null)
             {
+                MatchCollection collect1 = Regex.Matches(data, @"""(.*?)""");
 
+                Match match1 = rx.Match(data);
+                Match match2 = rx2.Match(data);
+                Match match3 = rx3.Match(data);
 
-                while (data != null)
+                if (match1.Success)
                 {
-                    Match keywords_matches = keywords.Match(data);
-                    Match match2 = unk_symbols.Match(data);
-                    Match match3 = keyworderror.Match(data);
-
-                    MatchCollection string_collection = Regex.Matches(data, @"""(.*?)""");
-                    MatchCollection variable_collection = Regex.Matches(data, @"HEY CHRISTMAS TREE (?<var1>[a-z0-9]*[a-z0-9]*)");
-                    MatchCollection fxn_name_collection = Regex.Matches(data, @"DO IT NOW (?<f1>[a-z0-9]*)");
-                    MatchCollection macro_collection = Regex.Matches(data, @"YOU SET US UP (?<macro>\@I LIED|\@NO PROBLEMO)");
-                    MatchCollection integer_collection = Regex.Matches(data, @"YOU SET US UP (?<int>\b\d+\b)|GET UP (?<int>\b\d+\b)|GET DOWN (?<int>\b\d+\b)");
-
-
-
-
-                    if (keywords_matches.Success)
-                    {
-                        Console.WriteLine("Keyword: {0}", keywords_matches.Value);
-
-
-                    }
-
-                    if (match2.Success)
-                    {
-                        Console.WriteLine("Symbol: {0} found.\n Syntax Error!", match2.Value);
-
-                    }
-
-                    if (match3.Success)
-                    {
-                        Console.WriteLine("Wrong keyword: {0} found.\n Syntax Error!", match3.Value);
-
-                    }
-
-                    foreach (Match match in string_collection)
-                    {
-                        Console.WriteLine("String literal: {0}", match.Groups[1].Value);
-                    }
-
-                    foreach (Match match in variable_collection)
-                    {
-                        Console.WriteLine("Variable name: {0}", match.Groups["var1"].Value);
-                    }
-
-                    foreach (Match match in fxn_name_collection)
-                    {
-                        Console.WriteLine("Function name: {0}", match.Groups["f1"].Value);
-                    }
-
-                    foreach (Match match in macro_collection)
-                    {
-                        Console.WriteLine("Macro: {0}", match.Groups["macro"].Value);
-                    }
-
-                    foreach (Match match in integer_collection)
-                    {
-                        Console.WriteLine("Integer: {0}", match.Groups["int"].Value);
-                    }
-
-
-
-                    //Console.WriteLine("this somehow prints twice before termination");
-                    data = sr.ReadLine();
-
-
+                    var t1 = Tuple.Create("Keyword ", match1.Value);
+                    dict1.Add(i, t1);
+                    i = i + 1;
                 }
+                if (match2.Success)
+                {
+                    var t1 = Tuple.Create("Integer literal", match2.Value);
+                    dict1.Add(i, t1);
+                    i = i + 1;
+                }
+                if (match3.Success)
+                {
+                    var t1 = Tuple.Create("Identifier", match3.Value);
+                    dict1.Add(i, t1);
+                    i = i + 1;
+                }
+
+                foreach (Match match in collect1)
+                {
+                    var t1 = Tuple.Create("String literal", match.Groups[1].Value);
+                    dict1.Add(i, t1);
+                    i = i + 1;
+                }
+
+
+
+
+
+
+
+
+
+
+
+                data = sr.ReadLine();
+            }
+
+            foreach (KeyValuePair<int, Tuple<string, string>> item in dict1)
+            {
+                Console.WriteLine("Key: {0}, Value: {1}", item.Key, item.Value);
 
             }
 

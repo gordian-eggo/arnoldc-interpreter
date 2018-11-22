@@ -44,6 +44,8 @@ ArnoldC.jar - the ArnoldC language pack for reference. Usage: ArnoldC [-run|-dec
 
 11-22-18, 1009H: fixed while loop regexes such that the contents can be added to the dictionary of lexemes.
 
+		  1021H: error pushing updated files to my branch. Saved a copy in a different location.
+
 
 COMMENTS ON SYNTAX:
 

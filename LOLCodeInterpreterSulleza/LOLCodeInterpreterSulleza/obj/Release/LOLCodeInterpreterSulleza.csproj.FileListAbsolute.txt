@@ -1,0 +1,9 @@
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\bin\Release\LOLCodeInterpreterSulleza.exe.config
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Release\LOLCodeInterpreterSulleza.csprojResolveAssemblyReference.cache
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Release\LOLCodeInterpreterSulleza.MainForm.resources
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Release\LOLCodeInterpreterSulleza.Properties.Resources.resources
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Release\LOLCodeInterpreterSulleza.csproj.GenerateResource.Cache
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\bin\Release\LOLCodeInterpreterSulleza.exe
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\bin\Release\LOLCodeInterpreterSulleza.pdb
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Release\LOLCodeInterpreterSulleza.exe
+C:\Users\marks\onedrive\documents\visual studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Release\LOLCodeInterpreterSulleza.pdb

@@ -1,0 +1,8 @@
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\bin\Debug\LOLCodeInterpreterSulleza.exe.config
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\bin\Debug\LOLCodeInterpreterSulleza.exe
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\bin\Debug\LOLCodeInterpreterSulleza.pdb
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Debug\LOLCodeInterpreterSulleza.MainForm.resources
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Debug\LOLCodeInterpreterSulleza.Properties.Resources.resources
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Debug\LOLCodeInterpreterSulleza.csproj.GenerateResource.Cache
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Debug\LOLCodeInterpreterSulleza.exe
+C:\Users\marks\OneDrive\Documents\Visual Studio 2015\Projects\LOLCodeInterpreterSulleza\LOLCodeInterpreterSulleza\obj\Debug\LOLCodeInterpreterSulleza.pdb

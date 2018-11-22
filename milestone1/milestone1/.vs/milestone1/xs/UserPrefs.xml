@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{6C150257-AA21-4732-90CF-87ECCD4F2B47}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DrawingArea.cs">
     <Files>
-      <File FileName="Program.cs" Line="93" Column="49" />
+      <File FileName="Program.cs" Line="48" Column="35" />
+      <File FileName="DrawingArea.cs" Line="35" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
